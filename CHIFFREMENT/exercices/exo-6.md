@@ -1,4 +1,3 @@
-
 ## Exercice 6 : chiffrement avec une clé asymétrique
 
 ### 6a. RSA-OAEP sur une petite donnée
