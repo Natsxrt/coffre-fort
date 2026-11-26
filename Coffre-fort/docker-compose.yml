@@ -1,0 +1,18 @@
+services:
+  auth-service:
+    build: ./auth-service
+
+  
+  vault-service:
+    build: ./vault-service
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./frontend:/usr/share/nginx/html:ro"
+    depends_on:
+      - auth-service
+      - vault-service
